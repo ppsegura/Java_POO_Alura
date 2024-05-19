@@ -3,6 +3,8 @@ package com.aluracursos.screenmatch.modelos;
 import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracursos.screenmatch.calculos.FiltroRecomendaciones;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula();
@@ -46,8 +48,24 @@ public class Principal {
         episodio.setNumero(1);
         episodio.setSerie(casaDragon);
         episodio.setTotalVisualizaciones(50);
-
         filtro.filtra(episodio);
+
+        var peliculaPedro = new Pelicula();
+        peliculaPedro.setNombre("Pedro");
+        peliculaPedro.setFechaDeLanzamiento(2024);
+        peliculaPedro.setDuracionEnMinutos(480);
+
+        ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
+        listaPeliculas.add(miPelicula);
+        listaPeliculas.add(otraPelicula);
+        listaPeliculas.add(peliculaPedro);
+
+        System.out.println("Tamaño de la lista " + listaPeliculas.size());
+        System.out.println("La primera peli es " + listaPeliculas.get(0).getNombre());
+
+        System.out.println(listaPeliculas);
+        System.out.println(listaPeliculas.get(0).toString());
+        System.out.println(listaPeliculas.size());
 
     }
 }
