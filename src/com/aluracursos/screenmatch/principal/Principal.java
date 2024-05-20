@@ -1,15 +1,16 @@
-package com.aluracursos.screenmatch.modelos;
+package com.aluracursos.screenmatch.principal;
 
 import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracursos.screenmatch.calculos.FiltroRecomendaciones;
+import com.aluracursos.screenmatch.modelos.Episodio;
+import com.aluracursos.screenmatch.modelos.Pelicula;
+import com.aluracursos.screenmatch.modelos.Serie;
 
 import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombre("Encanto");
-        miPelicula.setFechaDeLanzamiento(2021);
+        Pelicula miPelicula = new Pelicula("Encanto", 2021);
         miPelicula.setDuracionEnMinutos(120);
 
         miPelicula.muestraFichaTecnica();
@@ -20,14 +21,10 @@ public class Principal {
         System.out.println(miPelicula.getTotalDelasEvaluaciones());
         System.out.println(miPelicula.calculaMedia());
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("Matrix");
-        otraPelicula.setFechaDeLanzamiento(1999);
+        Pelicula otraPelicula = new Pelicula("Matrix", 199);
         otraPelicula.setDuracionEnMinutos(180);
 
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("Dragon");
-        casaDragon.setFechaDeLanzamiento(2024);
+        Serie casaDragon = new Serie("Dragon", 2024);
         casaDragon.setDuracionEnMinutos(360);
         casaDragon.setTemporadas(1);
         casaDragon.setMinutosPorEpisodio(50);
@@ -50,9 +47,7 @@ public class Principal {
         episodio.setTotalVisualizaciones(50);
         filtro.filtra(episodio);
 
-        var peliculaPedro = new Pelicula();
-        peliculaPedro.setNombre("Pedro");
-        peliculaPedro.setFechaDeLanzamiento(2024);
+        var peliculaPedro = new Pelicula("Pedro",2024);
         peliculaPedro.setDuracionEnMinutos(480);
 
         ArrayList<Pelicula> listaPeliculas = new ArrayList<>();

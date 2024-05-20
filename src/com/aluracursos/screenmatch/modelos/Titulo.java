@@ -1,6 +1,8 @@
 package com.aluracursos.screenmatch.modelos;
 
-public class Titulo {
+import java.io.Serializable;
+
+public class Titulo implements Comparable<Titulo> {
 
     private String nombre;
     private int fechaDeLanzamiento;
@@ -8,6 +10,11 @@ public class Titulo {
     private boolean incluidoEnElPlan;
     private double sumaDeLasEvaluaciones;
     private int totalDelasEvaluaciones;
+
+    public Titulo(String nombre, int fechaDeLanzamiento) {
+        this.nombre = nombre;
+        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
 
     public String getNombre() {
         return nombre;
@@ -57,18 +64,23 @@ public class Titulo {
         this.totalDelasEvaluaciones = totalDelasEvaluaciones;
     }
 
-    void muestraFichaTecnica(){
+    public void muestraFichaTecnica(){
         System.out.println("El nombre de la película es: " + nombre);
         System.out.println("Su fecha de lanzamiento es: " + fechaDeLanzamiento);
         System.out.println("Duración en minutos: "+ getDuracionEnMinutos());
     }
 
-    void evalua(double nota){
+    public void evalua(double nota){
         sumaDeLasEvaluaciones += nota;
         totalDelasEvaluaciones++;
     }
 
-    double calculaMedia(){
+    public double calculaMedia(){
         return sumaDeLasEvaluaciones / totalDelasEvaluaciones;
+    }
+
+    @Override
+    public int compareTo(Titulo otrotitulo) {
+        return this.getNombre().compareTo(otrotitulo.getNombre());
     }
 }
