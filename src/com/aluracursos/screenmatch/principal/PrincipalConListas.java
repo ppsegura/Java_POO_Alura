@@ -7,6 +7,7 @@ import com.aluracursos.screenmatch.modelos.Titulo;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalConListas {
 
@@ -20,7 +21,7 @@ public class PrincipalConListas {
         Serie casaDragon = new Serie("Dragon", 2024);
 
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new ArrayList<>();
         lista.add(otraPelicula);
         lista.add(peliculaPedro);
         lista.add(miPelicula);
