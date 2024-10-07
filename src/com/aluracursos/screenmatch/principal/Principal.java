@@ -10,6 +10,9 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
+        /**
+         * Comentario de prueba para github
+         */
         Pelicula miPelicula = new Pelicula("Encanto", 2021);
         miPelicula.setDuracionEnMinutos(120);
 
